@@ -9,7 +9,8 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
-       - docker build .
+       - docker build -t test:test .
+       - docker tag test:test 288732232203.dkr.ecr.eu-central-1.amazonaws.com/test:test
   post_build:
     commands:
-       - docker push 288732232203.dkr.ecr.eu-central-1.amazonaws.com/test
+       - docker push 288732232203.dkr.ecr.eu-central-1.amazonaws.com/test:test
