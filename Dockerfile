@@ -1,4 +1,4 @@
-FROM nginx:1.16-alpine
+FROM node:10
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN mkdir -p /var/www/test
 COPY package*.json ./var/www/test/
