@@ -10,7 +10,6 @@ phases:
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
-       - npm install
        - docker build -t test:1.0 .
        - docker tag test:1.0 288732232203.dkr.ecr.eu-central-1.amazonaws.com/test:latest
   post_build:
